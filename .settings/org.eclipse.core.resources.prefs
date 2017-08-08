@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+encoding//src/com/xyz/service/conn/pool=UTF-8
+encoding//src/com/xyz/service/conn/pool/RpcStubMosqProxyFactory.java=UTF-8
+encoding//src/com/xyz/service/mosqproxy/client=UTF-8
+encoding//src/com/xyz/service/thrift/datatype=UTF-8
+encoding//src/com/xyz/service/thrift/stub=UTF-8
+encoding/<project>=UTF-8
