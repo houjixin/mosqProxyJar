@@ -18,7 +18,7 @@ public class DefaultValues
 	public static final String CONN_STATUS_OFFLINE = "2";//连接不在线
 	public static final String CONN_STATUS_ACQUIRED = "0";//已分配，刚刚获得mosquitto server，还没建立tcpip连接
 	public static final String CONN_STATUS_ERROR = "-1";//查询用户在线状态错误
-	
+	public static final String CON_INFO_ID = "cid";
 	public static final String CON_INFO_STATUS = "st";
 	public static final String CON_INFO_KEY = "k";
 	public static final String CON_INFO_ENCRY_TYPE = "en_t";

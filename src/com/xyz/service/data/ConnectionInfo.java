@@ -55,7 +55,7 @@ public class ConnectionInfo {
     		JSONObject joCon = JSONObject.parseObject(conInfoStr);
     		if(joCon != null) {
     			conInfo = new ConnectionInfo();
-    			conInfo.connId = joCon.getString(DefaultValues.CON_INFO_STATUS);
+    			conInfo.connId = joCon.getString(DefaultValues.CON_INFO_ID);
     			conInfo.status = joCon.getString(DefaultValues.CON_INFO_STATUS);
     			conInfo.key = joCon.getString(DefaultValues.CON_INFO_KEY);
     			conInfo.encriptyType = joCon.getString(DefaultValues.CON_INFO_ENCRY_TYPE);
@@ -260,7 +260,7 @@ public class ConnectionInfo {
     public JSONObject toOutSimpleInfo(){
         JSONObject conInfo = new JSONObject();
         if(!StringUtils.isBlank(connId)){
-            conInfo.put(DefaultValues.CON_INFO_STATUS, connId);
+            conInfo.put(DefaultValues.CON_INFO_ID, connId);
         }
         if(!StringUtils.isBlank(status)){
             conInfo.put(DefaultValues.CON_INFO_STATUS, status);

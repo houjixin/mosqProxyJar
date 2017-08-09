@@ -153,7 +153,7 @@ public class MosqProxyClient
 	public String bindConnId(long logIndex, String caller, String appId, String userId, String connId, String devId, boolean isForceBind)
 	{
 		String logFlag = getClassName() + ".bindConnId";
-		logger.debug("[lid:{}][{}] appId:{}, userId:{}, connId:{}, devId:{}, isForceBind:{}", logIndex, logFlag, caller, appId, userId, connId, devId, isForceBind);
+		logger.debug("[lid:{}][{}] caller:{}, appId:{}, userId:{}, connId:{}, devId:{}, isForceBind:{}", logIndex, logFlag, caller, appId, userId, connId, devId, isForceBind);
 		if(StringUtils.isBlank(caller) || 
 				StringUtils.isBlank(appId) || 
 				StringUtils.isBlank(userId) || 
@@ -348,7 +348,11 @@ public class MosqProxyClient
 	public ConnectionInfo getConnection(long logIndex, String caller){
 //		String logFlag = getClassName() + ".getConnection";
 		ConnectionInfo connInfo = ConnectionInfo.fromJSONString(getStrConnection(logIndex, caller));
-		return (connInfo != null && connInfo.isValid()) ? connInfo : null;
+		if(connInfo == null){
+			logger.warn("[lid:{}][{}] cann't connection!", logIndex, caller);
+			return null;
+		}
+		return connInfo;
 	}
 	
 	public String getStrConnection(long logIndex, String caller){
